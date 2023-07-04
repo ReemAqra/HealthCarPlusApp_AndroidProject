@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/panafsaje"
+    tools:context=".MainActivity2">
+
+    <ImageView
+        android:id="@+id/logo_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="65dp"
+        android:src="@drawable/img"
+        app:layout_constraintBottom_toTopOf="@+id/Customer_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Customer_button"
+        android:layout_width="149dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/green"
+        android:fontFamily="@font/bebas_neue"
+        android:text="Customer?"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/Admin_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_imageView"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Admin_button"
+        android:layout_width="149dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="69dp"
+        android:background="@color/green"
+        android:fontFamily="@font/bebas_neue"
+        android:text="Admin?"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_button"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

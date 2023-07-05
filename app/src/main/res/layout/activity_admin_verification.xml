@@ -34,12 +34,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_margin="30dp"
+        android:layout_margin="50dp"
         android:layout_gravity="center"
         android:textSize="20dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:background="@color/green"
+        android:textColor="@color/panafsaje"
+        android:backgroundTint="@color/green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter" />

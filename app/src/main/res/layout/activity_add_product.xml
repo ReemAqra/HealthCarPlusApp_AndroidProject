@@ -1,135 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="20dp"
-    tools:context=".AddProductActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload Data"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@color/Ourblue"/>
+    tools:context=".MainActivity2">
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_margin="20dp"-->
+<!--        tools:context=".admin.AddProductActivity">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Upload Data"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/Ourblue"/>-->
 
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img_2" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:srcCompat="@drawable/img_2" />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="@color/Ourblue"
-            android:text="Name " />
+<!--            <TextView-->
+<!--                android:id="@+id/textView6"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/Ourblue"-->
+<!--                android:text="Name " />-->
 
-        <EditText
-            android:id="@+id/nametxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-    </LinearLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/nametxt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />-->
+<!--        </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Price"
-            android:textStyle="bold"
-            android:textColor="@color/Ourblue"
-             />
+<!--            <TextView-->
+<!--                android:id="@+id/textView7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Price"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/Ourblue"-->
+<!--                />-->
 
-        <EditText
-            android:id="@+id/pricetxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
+<!--            <EditText-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/pricetxt"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />-->
+<!--        </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="@color/Ourblue"
-            android:text="Description" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/Ourblue"-->
+<!--                android:text="Description" />-->
 
-        <EditText
-            android:id="@+id/destxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/destxt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />-->
+<!--        </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/Ourblue"
-            android:textStyle="bold"
-            android:text="Number" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView9"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textColor="@color/Ourblue"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="Number" />-->
 
-        <EditText
-            android:id="@+id/numtxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </LinearLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/numtxt"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+<!--        </LinearLayout>-->
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="29dp" />
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="29dp" />-->
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Post Product"
-        app:backgroundTint="@color/Ourblue" />
+<!--        <Button-->
+<!--            android:id="@+id/button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Post Product"-->
+<!--            app:backgroundTint="@color/Ourblue" />-->
 
-</LinearLayout>
+<!--    </LinearLayout>-->
+
+
+<!--    <com.google.android.material.bottomappbar.BottomAppBar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/bottomAppBar"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:backgroundTint="@color/blue"-->
+<!--        app:fabCradleMargin="5dp"-->
+<!--        app:fabCradleRoundedCornerRadius="30dp"-->
+<!--        app:fabCradleVerticalOffset="15dp"-->
+
+<!--        >-->
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/bottomNavigationId"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:labelVisibilityMode="labeled"-->
+<!--            app:itemIconSize="30dp"-->
+<!--            app:itemIconTint="@color/panafsaje"-->
+<!--            app:itemTextColor="@color/panafsaje"-->
+<!--            android:background="@drawable/transparent_background"-->
+<!--            app:menu="@menu/nav_menu_admin"-->
+
+
+<!--            />-->
+<!--    </com.google.android.material.bottomappbar.BottomAppBar>-->
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:maxImageSize="50dp"-->
+<!--        android:id="@+id/fab"-->
+<!--        app:fabSize="auto"-->
+<!--        android:backgroundTint="@color/panafsaje"-->
+<!--        app:layout_anchor="@id/bottomAppBar"-->
+<!--        android:src="@drawable/add_circle_24"/>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

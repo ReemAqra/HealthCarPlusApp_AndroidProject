@@ -19,5 +19,5 @@
     <item
         android:id="@+id/cost_button"
         android:icon="@drawable/mony_on_24"
-        android:title="cost" />
+        android:title="Bank" />
 </menu>

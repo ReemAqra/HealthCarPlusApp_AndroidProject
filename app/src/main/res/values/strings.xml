@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HealthCarPlus_App</string>
+    <string-array name="bank">
+        <item>Choose your process !</item>
+        <item>Take The Amount</item>
+        <item>Put The Amount</item>
+    </string-array>
 </resources>

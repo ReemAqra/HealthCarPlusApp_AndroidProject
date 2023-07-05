@@ -7,7 +7,7 @@ plugins {
 android {
     namespace 'com.example.healthcarplus_app'
     compileSdk 33
-
+    buildToolsVersion "8.0.1"
     defaultConfig {
         applicationId "com.example.healthcarplus_app"
         minSdk 26

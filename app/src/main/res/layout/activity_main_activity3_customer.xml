@@ -7,13 +7,20 @@
     android:background="@color/panafsaje"
     tools:context=".MainActivity2">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout">
+
+    </FrameLayout>
+
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:id="@+id/bottomAppBar"
+
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/panafsaje"
         app:fabCradleMargin="5dp"
         app:fabCradleRoundedCornerRadius="30dp"
         app:fabCradleVerticalOffset="15dp"
@@ -25,11 +32,12 @@
             android:id="@+id/bottomNavigationId"
             android:layout_gravity="center"
             android:layout_marginRight="15dp"
+            android:background="@drawable/bottom_background"
+            android:elevation="2dp"
             app:labelVisibilityMode="labeled"
             app:itemIconSize="30dp"
-            app:itemIconTint="@color/blue"
-            app:itemTextColor="@color/blue"
-            android:background="@android:color/transparent"
+            app:itemIconTint="@color/panafsaje"
+            app:itemTextColor="@color/panafsaje"
             app:menu="@menu/nav_menu"
 
 

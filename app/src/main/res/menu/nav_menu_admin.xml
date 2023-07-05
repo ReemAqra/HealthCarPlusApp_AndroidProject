@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <item
-        android:id="@+id/home"
+        android:id="@+id/home_button"
         android:icon="@drawable/baseline_home_24"
         android:title="Home" />
     <item
-        android:id="@+id/sell"
+        android:id="@+id/sell_button"
         android:icon="@drawable/baseline_sell_24"
         android:title="Sell" />
     <item
         android:enabled="false"
         android:title="" />
     <item
-        android:id="@+id/search"
+        android:id="@+id/Search_button"
         android:icon="@drawable/baseline_search_24"
         android:title="Search" />
     <item
-        android:id="@+id/cost"
+        android:id="@+id/cost_button"
         android:icon="@drawable/mony_on_24"
         android:title="cost" />
 </menu>

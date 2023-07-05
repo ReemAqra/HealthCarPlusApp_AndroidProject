@@ -5,5 +5,8 @@
     <color name="panafsaje">#E6E8FF</color>
     <color name="blue">#08143E</color>
     <color name="green">#208213</color>
+    <color name="Ourblue">#08143E</color>
+    <color name="Ourbackground">#E5E7FF</color>
+    <color name="Ourgreen">#177A0E</color>
 
 </resources>

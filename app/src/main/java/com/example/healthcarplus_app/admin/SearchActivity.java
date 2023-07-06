@@ -46,7 +46,7 @@ public class SearchActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.Search_button) {
                     return true;
             } else if (item.getItemId() == R.id.add_button) {
-                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
+//                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;

@@ -33,7 +33,7 @@
         android:hint="*****" />
 
     <CheckBox
-<<<<<<< HEAD
+
         android:id="@+id/chk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,14 +48,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword"
         app:layout_constraintVertical_bias="0.039" />
-=======
-        android:id="@+id/remember"
-        android:layout_width="183dp"
-        android:layout_height="41dp"
-        android:text="Remember Me"
-        android:textColor="@color/Ourblue"
-        android:textSize="20sp"></CheckBox>
->>>>>>> f96b14769af60584031c7e1761c4eba8218043b3
+
+
 
     <Button
         android:id="@+id/button"

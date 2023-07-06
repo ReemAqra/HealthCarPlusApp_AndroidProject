@@ -37,10 +37,8 @@
         android:id="@+id/logo_imageView"
         android:layout_width="269dp"
         android:layout_height="153dp"
-<<<<<<< HEAD
-=======
+
         android:layout_marginTop="176dp"
->>>>>>> f96b14769af60584031c7e1761c4eba8218043b3
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,17 +50,10 @@
 
     <Button
         android:id="@+id/Customer_button"
-<<<<<<< HEAD
-        android:layout_width="150dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/blue"
-=======
         android:layout_width="176dp"
         android:layout_height="52dp"
         android:layout_marginTop="72dp"
-        android:background="@color/green"
->>>>>>> f96b14769af60584031c7e1761c4eba8218043b3
+        android:backgroundTint="@color/green"
         android:fontFamily="@font/bebas_neue"
         android:text="Customer?"
         android:textSize="25dp"

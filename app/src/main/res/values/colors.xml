@@ -8,5 +8,7 @@
     <color name="Ourblue">#08143E</color>
     <color name="Ourbackground">#E5E7FF</color>
     <color name="Ourgreen">#177A0E</color>
+    <color name="purple_200">#08143E</color>
+    <color name="purple_500">#08143E</color>
 
 </resources>

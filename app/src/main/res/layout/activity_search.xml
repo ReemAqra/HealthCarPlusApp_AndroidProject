@@ -7,12 +7,17 @@
     android:background="@color/panafsaje"
     tools:context=".MainActivity2">
 
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SEarch" />
+        android:id="@+id/searchView"
+        android:layout_margin="10dp"
+        app:queryHint="Search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"

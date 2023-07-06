@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.widget.SearchView;
 
 import com.example.healthcarplus_app.R;
 import com.example.healthcarplus_app.RecycleAdapter;
@@ -24,15 +25,22 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private RecyclerView searchView;
+    private RecyclerView recycleView;
     List<product> ProductList;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        recycleView= findViewById(R.id.recycleView);
+        searchView = (SearchView) findViewById(R.id.search);
+        searchView.clearFocus();
+
+
         // ----------------------------- Navigation Section ------------------------------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -40,19 +48,19 @@ public class SearchActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home_button) {
                 startActivity(new Intent(getApplicationContext(), MainActivity3_admin.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.Search_button) {
                     return true;
             } else if (item.getItemId() == R.id.add_button) {
-//                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.cost_button) {
                 startActivity(new Intent(getApplicationContext(), MoneySafeActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             }
@@ -60,10 +68,8 @@ public class SearchActivity extends AppCompatActivity {
         });
         // ----------------------------------------------------------------------------
 
-        searchView=findViewById(R.id.searchView);
-
-        GridLayoutManager gridLayoutManager =new GridLayoutManager(SearchActivity.this , 1);
-        searchView.setLayoutManager(gridLayoutManager);
+GridLayoutManager gridLayoutManager =new GridLayoutManager(SearchActivity.this , 1);
+        recycleView.setLayoutManager(gridLayoutManager);
 
         AlertDialog.Builder builder= new AlertDialog.Builder(SearchActivity.this);
         builder.setView(R.layout.progress_layout);
@@ -72,7 +78,7 @@ public class SearchActivity extends AppCompatActivity {
 
         ProductList = new ArrayList<>();
         RecycleAdapter adapter = new RecycleAdapter(SearchActivity.this, ProductList);
-        searchView.setAdapter(adapter);
+        recycleView.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Android Tutorials");
         dialog.show();

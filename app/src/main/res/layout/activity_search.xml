@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchView"
+        android:id="@+id/search"
         android:layout_margin="10dp"
         app:iconifiedByDefault="false"
         app:searchHintIcon="@null"
@@ -26,7 +26,7 @@
         android:id="@+id/recycleView"
         android:scrollbars="horizontal"
         android:layout_marginTop="60dp"
-        android:layout_below="@id/searchView"
+        android:layout_below="@id/search"
         />
 
     <com.google.android.material.bottomappbar.BottomAppBar

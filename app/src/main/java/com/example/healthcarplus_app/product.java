@@ -56,6 +56,7 @@ public class product {
         this.pDescription = pDescription;
         this.pImage = pImage;
     }
+    public product(){};
 
 
 }

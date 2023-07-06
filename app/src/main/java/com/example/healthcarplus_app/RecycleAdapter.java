@@ -20,11 +20,10 @@ import com.example.healthcarplus_app.admin.SearchActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleAdapter  extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
+public class RecycleAdapter  extends RecyclerView.Adapter<viewHolder> {
 
     private Context context;
     private List<product> ProductList;
-
 
 
     public RecycleAdapter(Context context, List<product> productList ) {
@@ -34,16 +33,16 @@ public class RecycleAdapter  extends RecyclerView.Adapter<RecycleAdapter.ViewHol
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView v = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item,
                 parent,
                 false);
 
-        return new ViewHolder(v);
+        return new viewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder( viewHolder holder, int position) {
 
 
         Glide.with(context).load(ProductList.get(position).getpImage()).into(holder.productImage);
@@ -74,18 +73,20 @@ public class RecycleAdapter  extends RecyclerView.Adapter<RecycleAdapter.ViewHol
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private CardView cardView;
-        private TextView productName ,productPrice;
-        private ImageView productImage;
 
-        public ViewHolder(CardView itemView){
-            super(itemView);
-            productName = itemView.findViewById(R.id.productName);
-            productName = itemView.findViewById(R.id.productName);
-            productImage = itemView.findViewById(R.id.productImage);
-            cardView = itemView.findViewById(R.id.cardView);
-        }
+}
+class viewHolder extends RecyclerView.ViewHolder{
+    CardView cardView;
+    TextView productName;
+    TextView productPrice;
+    ImageView productImage;
 
+    public viewHolder(CardView itemView){
+        super(itemView);
+        productName = itemView.findViewById(R.id.productName);
+        productPrice = itemView.findViewById(R.id.productPrice);
+        productImage = itemView.findViewById(R.id.productImage);
+        cardView = itemView.findViewById(R.id.cardView);
     }
+
 }

@@ -18,21 +18,16 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthcarplus_app.MainActivity;
-import com.example.healthcarplus_app.MainActivity2;
 import com.example.healthcarplus_app.R;
 import com.example.healthcarplus_app.product;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -62,23 +57,16 @@ public class AddProductActivity extends AppCompatActivity {
         priceEditText = (EditText) findViewById(R.id.pricetxt);
         desEditText = (EditText) findViewById(R.id.destxt);
         numEditText =  (EditText) findViewById(R.id.numtxt);
-
-       ProductName= nameEditText.getText().toString();
+        ProductName= nameEditText.getText().toString();
        ProductPrice= priceEditText.getText().toString();
         ProductDescription= desEditText.getText().toString();
        ProductNum= numEditText.getText().toString();
 
         checkInstance(savedInstanceState);
-
-
-
         Button PostButton = (Button) findViewById(R.id.button);
-<<<<<<< HEAD
         String imageURL;
-       final Uri[] uri = new Uri[1];
-=======
+        final Uri[][] uri = {new Uri[1]};
 
->>>>>>> f96b14769af60584031c7e1761c4eba8218043b3
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),

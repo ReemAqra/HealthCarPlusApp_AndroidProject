@@ -3,9 +3,11 @@ package com.example.healthcarplus_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +18,10 @@ public class admin_Verification extends AppCompatActivity {
     private TextView textView;
     private EditText Code_editText;
     private Button button;
+    CheckBox remember;
+    private SharedPreferences mPref;
+    private static final String code="PrefCode";
+    private Boolean saveCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +29,35 @@ public class admin_Verification extends AppCompatActivity {
         textView =findViewById(R.id.textView);
         Code_editText =findViewById(R.id.Code_editText);
         button =findViewById(R.id.button);
+        remember = (CheckBox) findViewById(R.id.remember);
+        String msg ="123admin";
+        mPref = getSharedPreferences(code,MODE_PRIVATE);
+
+        saveCode = mPref.getBoolean("saveCode", false);
+        if (saveCode == true) {
+            Code_editText.setText(mPref.getString("",""));
+            remember.setChecked(true);
+        }
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String msg ="123admin";
+
                 String password= String.valueOf(Code_editText.getText());
                 if (password.equals(msg)){
+                    if (remember.isChecked()){
+                        Boolean boolisChecked = remember.isChecked();
+                        SharedPreferences.Editor editor = mPref.edit();
+                        editor.putString("code",Code_editText.getText().toString());
+                        editor.putBoolean("pref_check", boolisChecked);
+                        editor.commit();
+                        Toast.makeText(getApplicationContext(),"Your Code saved.", Toast.LENGTH_SHORT).show();
+
+                    }else {
+                    mPref.edit().clear().apply();
+                    }
+
                     Intent intent = new Intent(admin_Verification.this, MainActivity3_admin.class);
                     startActivity(intent);
                 }else {

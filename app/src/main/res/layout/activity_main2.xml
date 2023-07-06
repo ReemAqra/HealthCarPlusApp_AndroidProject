@@ -7,30 +7,71 @@
     android:background="@color/panafsaje"
     tools:context=".MainActivity2">
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome To HealthCarePlus App"
+        android:textColor="@color/Ourblue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/logo_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView100"
+        android:layout_width="423dp"
+        android:layout_height="22dp"
+        android:text="__________________________________________________________________________________________________________________"
+        android:textColor="@color/Ourgreen"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.024" />
+
     <ImageView
         android:id="@+id/logo_imageView"
         android:layout_width="269dp"
         android:layout_height="153dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="176dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+
     <Button
         android:id="@+id/Customer_button"
-        android:layout_width="150dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="176dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="72dp"
         android:background="@color/green"
         android:fontFamily="@font/bebas_neue"
         android:text="Customer?"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_imageView"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textColor="@color/Ourgreen"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Admin_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Customer_button" />
 
     <Button
         android:id="@+id/Admin_button"
@@ -45,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Customer_button"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.394"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

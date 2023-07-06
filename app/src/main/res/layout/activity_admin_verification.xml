@@ -10,14 +10,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="283dp"
+        android:layout_width="332dp"
         android:layout_height="59dp"
-        android:textColor="@color/blue"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/bebas_neue"
         android:gravity="center"
         android:text="Enter Verfication Code"
+        android:textColor="@color/blue"
         android:textSize="30dp" />
 
     <EditText
@@ -32,6 +32,14 @@
         android:inputType="textPassword"
         android:hint="*****" />
 
+    <CheckBox
+        android:id="@+id/remember"
+        android:layout_width="183dp"
+        android:layout_height="41dp"
+        android:text="Remember Me"
+        android:textColor="@color/Ourblue"
+        android:textSize="20sp"></CheckBox>
+
     <Button
         android:id="@+id/button"
         android:layout_margin="50dp"
@@ -43,5 +51,5 @@
         android:backgroundTint="@color/green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter" />
+        android:text="Go" />
 </LinearLayout>

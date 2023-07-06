@@ -47,7 +47,7 @@ public class MoneySafeActivity extends AppCompatActivity implements AdapterView.
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.sell_button) {
-               // startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
+                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;

@@ -19,7 +19,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.071" />
+            app:layout_constraintVertical_bias="0.048" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="411dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="3dp"
+            android:text="__________________________________________________________________________________________________________________"
+            android:textColor="@color/Ourgreen"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView"
@@ -27,7 +42,7 @@
             android:layout_height="43dp"
             android:fontFamily="@font/bebas_neue"
             android:gravity="center"
-            android:text="Pharmacy Money Safe"
+            android:text="Money Safe"
             android:textColor="@color/Ourblue"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -35,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.228" />
+            app:layout_constraintVertical_bias="0.247" />
 
         <TextView
             android:id="@+id/textView10"
@@ -55,7 +70,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="55dp"
             android:text="Sum = "
             android:textColor="@color/Ourblue"
             android:textSize="20sp"
@@ -99,18 +114,18 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="149dp"
-            android:layout_height="26dp"
+            android:layout_width="165dp"
+            android:layout_height="25dp"
             android:text="Write the Amount : "
             android:textColor="@color/Ourblue"
-            android:textSize="15sp"
+            android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text11"
-            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintHorizontal_bias="0.595"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.452" />
+            app:layout_constraintVertical_bias="0.453" />
 
         <EditText
             android:id="@+id/text11"
@@ -132,7 +147,7 @@
             android:layout_height="wrap_content"
             android:text="What you want to do ? "
             android:textColor="@color/Ourblue"
-            android:textSize="15sp"
+            android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +180,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.682" />
+            app:layout_constraintVertical_bias="0.727" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

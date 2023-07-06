@@ -1,6 +1,7 @@
 package com.example.healthcarplus_app.admin;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,10 +15,27 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthcarplus_app.MainActivity;
+import com.example.healthcarplus_app.MainActivity2;
 import com.example.healthcarplus_app.R;
+import com.example.healthcarplus_app.product;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class AddProductActivity extends AppCompatActivity {
      ImageView Image;
@@ -31,7 +49,8 @@ public class AddProductActivity extends AppCompatActivity {
     String ProductPrice;
     String ProductDescription;
     String ProductNum;
-
+    String imageURL;
+    Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +73,12 @@ public class AddProductActivity extends AppCompatActivity {
 
 
         Button PostButton = (Button) findViewById(R.id.button);
+<<<<<<< HEAD
         String imageURL;
        final Uri[] uri = new Uri[1];
+=======
+
+>>>>>>> f96b14769af60584031c7e1761c4eba8218043b3
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -64,8 +87,8 @@ public class AddProductActivity extends AppCompatActivity {
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
-                            uri[0] = data.getData();
-                            Image.setImageURI(uri[0]);
+                            uri = data.getData();
+                            Image.setImageURI(uri);
                         } else {
                             Toast.makeText(AddProductActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
                         }
@@ -102,6 +125,10 @@ public class AddProductActivity extends AppCompatActivity {
                 }
                 saveData();
 
+                Intent intent = new Intent(AddProductActivity.this, MainActivity3_admin.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
@@ -128,6 +155,58 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     public void saveData() {
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Android Images").child(uri.getLastPathSegment());
+        AlertDialog.Builder builder = new AlertDialog.Builder(AddProductActivity.this);
+        builder.setCancelable(false);
+        builder.setView(R.layout.progress_layout);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                while (!uriTask.isComplete());
+                Uri urlImage = uriTask.getResult();
+                imageURL = urlImage.toString();
+                uploadData();
+                dialog.dismiss();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                dialog.dismiss();
+            }
+        });
 
     }
+
+
+    public void uploadData(){
+        String ProductName= nameEditText.getText().toString();
+        String ProductPrice= priceEditText.getText().toString();
+        String ProductDescription= desEditText.getText().toString();
+        String ProductNum= numEditText.getText().toString();
+        product product = new product( imageURL,ProductName, ProductPrice, ProductDescription,ProductNum);
+
+        String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+        FirebaseDatabase.getInstance().getReference("Android Tutorials").child(currentDate)
+                .setValue(product).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(AddProductActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AddProductActivity.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+    }
+
    }

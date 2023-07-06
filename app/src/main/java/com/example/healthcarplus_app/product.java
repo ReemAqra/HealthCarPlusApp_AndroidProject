@@ -49,11 +49,14 @@ public class product {
     }
 
     public product(String pImage, String pName, String pPrice, String pDescription, String pNumber) {
-        this.pImage = pImage;
+        this.pNumber = pNumber;
+
         this.pName = pName;
         this.pPrice = pPrice;
         this.pDescription = pDescription;
-        this.pNumber = pNumber;
+        this.pImage = pImage;
     }
+
+
 }
 

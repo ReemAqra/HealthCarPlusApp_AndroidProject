@@ -54,7 +54,7 @@ public class AddProductActivity extends AppCompatActivity {
 
 
         Button PostButton = (Button) findViewById(R.id.button);
-                String imageURL;
+        String imageURL;
        final Uri[] uri = new Uri[1];
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(

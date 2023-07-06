@@ -11,11 +11,12 @@
         android:id="@+id/logo_imageView"
         android:layout_width="269dp"
         android:layout_height="153dp"
-        android:layout_marginTop="260dp"
         android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -23,7 +24,7 @@
         android:layout_width="150dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
-        android:background="@color/green"
+        android:backgroundTint="@color/blue"
         android:fontFamily="@font/bebas_neue"
         android:text="Customer?"
         android:textSize="25dp"
@@ -37,7 +38,7 @@
         android:layout_width="155dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@color/green"
+        android:backgroundTint="@color/blue"
         android:fontFamily="@font/bebas_neue"
         android:text="Admin?"
         android:textSize="25dp"

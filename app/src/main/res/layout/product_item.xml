@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_weight="1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:textDirection="rtl"
+    card_view:cardElevation="2dp"
+    card_view:cardCornerRadius="4dp">
+
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:id="@+id/productImage"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productName"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productprice"/>
+
+</androidx.cardview.widget.CardView>

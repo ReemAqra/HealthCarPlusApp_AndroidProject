@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/panafsaje"
+    android:background="@color/blue_100"
     tools:context=".MainActivity2">
 
     <androidx.appcompat.widget.SearchView
@@ -12,12 +12,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchView"
         android:layout_margin="10dp"
+        app:iconifiedByDefault="false"
+        app:searchHintIcon="@null"
+        android:focusable="false"
+        app:closeIcon="@drawable/baseline_clear_24"
+        android:background="@drawable/background"
+        app:searchIcon="@drawable/baseline_search_24"
         app:queryHint="Search"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"/>
+        android:id="@+id/recycleView"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/searchView"
+        />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
@@ -45,14 +55,6 @@
 
             />
     </com.google.android.material.bottomappbar.BottomAppBar>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:maxImageSize="50dp"
-        android:id="@+id/fab"
-        app:fabSize="auto"
-        android:backgroundTint="@color/panafsaje"
-        app:layout_anchor="@id/bottomAppBar"
-        android:src="@drawable/add_circle_24"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

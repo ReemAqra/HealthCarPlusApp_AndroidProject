@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.healthcarplus_app.admin.admin_Verification;
 import com.example.healthcarplus_app.customer.MainCustomerActivity;
 
 public class MainActivity2 extends AppCompatActivity {

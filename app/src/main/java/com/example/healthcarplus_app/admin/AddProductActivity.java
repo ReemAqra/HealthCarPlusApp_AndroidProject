@@ -34,17 +34,9 @@ import java.util.Calendar;
 
 public class AddProductActivity extends AppCompatActivity {
      ImageView Image;
-     EditText nameEditText ;
-     EditText priceEditText;
-     EditText desEditText;
-     EditText numEditText;
+     EditText nameEditText , priceEditText ,desEditText,numEditText;
 
-    String ProductImage;
-    String ProductName;
-    String ProductPrice;
-    String ProductDescription;
-    String ProductNum;
-    String imageURL;
+    String ProductImage,ProductName,ProductPrice,ProductDescription,ProductNum,imageURL;
     Uri uri;
 
     @Override

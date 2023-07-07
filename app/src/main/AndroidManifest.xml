@@ -22,7 +22,7 @@
             android:name=".admin.SearchAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".admin_Verification"
+            android:name=".admin.admin_Verification"
             android:exported="false" />
         <activity
             android:name=".customer.MainCustomerActivity"

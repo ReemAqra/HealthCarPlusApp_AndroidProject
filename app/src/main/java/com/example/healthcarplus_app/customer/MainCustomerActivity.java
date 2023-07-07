@@ -17,7 +17,6 @@ public class MainCustomerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_customer);
-
         // ----------------------------- Navigation Section ------------------------------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
         bottomNavigationView.setSelectedItemId(R.id.home_btn);
@@ -27,17 +26,17 @@ public class MainCustomerActivity extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.search_btn) {
                 startActivity(new Intent(getApplicationContext(), SearchCustomerActivity.class));
-                //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.star_btn) {
-//                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.call_btn) {
                 startActivity(new Intent(getApplicationContext(), CallUsActivity.class));
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             }

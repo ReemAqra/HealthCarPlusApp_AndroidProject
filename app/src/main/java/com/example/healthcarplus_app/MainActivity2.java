@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.healthcarplus_app.customer.MainCustomerActivity;
+
 public class MainActivity2 extends AppCompatActivity {
     private Button Customer_button,Admin_button;
     private ImageView logo_imageView;
@@ -30,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         Customer_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3_Customer.class);
+                Intent intent = new Intent(MainActivity2.this, MainCustomerActivity.class);
                 startActivity(intent);
             }
         });

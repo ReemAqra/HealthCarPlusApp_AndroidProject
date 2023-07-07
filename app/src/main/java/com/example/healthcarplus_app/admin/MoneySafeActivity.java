@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthcarplus_app.R;
-import com.example.healthcarplus_app.admin.MainActivity3_admin;
 //import com.example.healthcarplus_app.admin.SearchActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -33,11 +32,12 @@ public class MoneySafeActivity extends AppCompatActivity implements AdapterView.
         setContentView(R.layout.activity_money_safe);
         // ----------------------------- Navigation Section ------------------------------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.cost_button);
+
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home_button) {
-                startActivity(new Intent(getApplicationContext(), MainActivity3_admin.class));
+                startActivity(new Intent(getApplicationContext(), MainAdminActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;

@@ -23,18 +23,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchAdminActivity extends AppCompatActivity {
 
     private RecyclerView recycleView;
     List<product> ProductList;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
     SearchView searchView;
+    RecycleAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_search_admin);
 
         recycleView= findViewById(R.id.recycleView);
         searchView = (SearchView) findViewById(R.id.search);
@@ -43,24 +44,24 @@ public class SearchActivity extends AppCompatActivity {
 
         // ----------------------------- Navigation Section ------------------------------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.Search_button);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home_button) {
-                startActivity(new Intent(getApplicationContext(), MainActivity3_admin.class));
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                startActivity(new Intent(getApplicationContext(), MainAdminActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.Search_button) {
                     return true;
             } else if (item.getItemId() == R.id.add_button) {
                 startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.cost_button) {
                 startActivity(new Intent(getApplicationContext(), MoneySafeActivity.class));
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             }
@@ -68,16 +69,16 @@ public class SearchActivity extends AppCompatActivity {
         });
         // ----------------------------------------------------------------------------
 
-GridLayoutManager gridLayoutManager =new GridLayoutManager(SearchActivity.this , 1);
+        GridLayoutManager gridLayoutManager =new GridLayoutManager(SearchAdminActivity.this , 1);
         recycleView.setLayoutManager(gridLayoutManager);
 
-        AlertDialog.Builder builder= new AlertDialog.Builder(SearchActivity.this);
+        AlertDialog.Builder builder= new AlertDialog.Builder(SearchAdminActivity.this);
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
 
         ProductList = new ArrayList<>();
-        RecycleAdapter adapter = new RecycleAdapter(SearchActivity.this, ProductList);
+        adapter = new RecycleAdapter(SearchAdminActivity.this, ProductList);
         recycleView.setAdapter(adapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Android Tutorials");
@@ -102,5 +103,27 @@ GridLayoutManager gridLayoutManager =new GridLayoutManager(SearchActivity.this ,
 
             }
         });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return false;
+            }
+        });
         }
+    public void searchList(String text){
+        ArrayList<product> searchList = new ArrayList<>();
+        for (product dataClass: ProductList){
+            if (dataClass.getpName().toLowerCase().contains(text.toLowerCase())){
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchProduct(searchList);
+    }
 }

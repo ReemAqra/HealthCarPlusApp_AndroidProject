@@ -2,20 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <item
-        android:id="@+id/home"
+        android:id="@+id/home_btn"
         android:icon="@drawable/baseline_home_24"
         android:title="Home" />
 
     <item
-        android:id="@+id/search"
+        android:id="@+id/search_btn"
         android:icon="@drawable/baseline_search_24"
         android:title="Search" />
     <item
-        android:id="@+id/star"
+        android:id="@+id/star_btn"
         android:icon="@drawable/star_24"
-        android:title="" />
+        android:title="Favorite" />
     <item
-        android:id="@+id/call"
+        android:id="@+id/call_btn"
         android:icon="@drawable/baseline_call_24"
-        android:title="" />
+        android:title="Call us" />
 </menu>

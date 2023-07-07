@@ -13,19 +13,25 @@
         android:theme="@style/Theme.HealthCarPlus_App"
         tools:targetApi="31">
         <activity
+            android:name=".customer.SearchCustomerActivity"
+            android:exported="false" />
+        <activity
             android:name=".DitailActivity"
             android:exported="false" />
         <activity
-            android:name=".admin.SearchActivity"
+            android:name=".admin.SearchAdminActivity"
             android:exported="false" />
         <activity
             android:name=".admin_Verification"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3_Customer"
+            android:name=".customer.MainCustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".admin.MainActivity3_admin"
+            android:name=".customer.CallUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.MainAdminActivity"
             android:exported="false" />
         <activity
             android:name=".admin.MoneySafeActivity"

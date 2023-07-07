@@ -7,19 +7,45 @@
     android:background="@color/panafsaje"
     tools:context=".MainActivity2">
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame_layout">
+        android:background="@color/blue_100"
+        tools:context=".MainActivity2">
 
-    </FrameLayout>
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search"
+            android:layout_margin="10dp"
+            app:iconifiedByDefault="false"
+            app:searchHintIcon="@null"
+            android:focusable="false"
+            app:closeIcon="@drawable/baseline_clear_24"
+            android:background="@drawable/background"
+            app:searchIcon="@drawable/baseline_search_24"
+            app:queryHint="Search"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycleView_1"
+            android:scrollbars="horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_below="@id/search"
+            />
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:backgroundTint="@android:color/transparent"
         android:id="@+id/bottomAppBar"
-
         android:layout_gravity="bottom"
         app:fabCradleMargin="5dp"
         app:fabCradleRoundedCornerRadius="30dp"
@@ -43,6 +69,10 @@
 
             />
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

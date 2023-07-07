@@ -113,7 +113,7 @@ public class AddProductActivity extends AppCompatActivity {
                 }
                 saveData();
 
-                Intent intent = new Intent(AddProductActivity.this, MainActivity3_admin.class);
+                Intent intent = new Intent(AddProductActivity.this, MainAdminActivity.class);
                 startActivity(intent);
                 finish();
 

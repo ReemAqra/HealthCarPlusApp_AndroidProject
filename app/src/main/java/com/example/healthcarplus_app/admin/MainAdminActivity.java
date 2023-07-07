@@ -8,20 +8,20 @@ import android.os.Bundle;
 import com.example.healthcarplus_app.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity3_admin extends AppCompatActivity {
+public class MainAdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity3_admin);
+        setContentView(R.layout.activity_main_admin);
         // ----------------------------- Navigation Section ------------------------------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.home_button);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home_button) {
                 return true;
             } else if (item.getItemId() == R.id.Search_button) {
-                startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+                startActivity(new Intent(getApplicationContext(), SearchAdminActivity.class));
               //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;

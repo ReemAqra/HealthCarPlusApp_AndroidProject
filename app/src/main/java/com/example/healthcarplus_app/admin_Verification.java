@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.healthcarplus_app.admin.MainActivity3_admin;
+import com.example.healthcarplus_app.admin.MainAdminActivity;
 
 public class admin_Verification extends AppCompatActivity {
 
@@ -69,7 +68,7 @@ public class admin_Verification extends AppCompatActivity {
                         }else {
                             mPref.edit().clear().apply();
                         }
-                        Intent intent = new Intent(admin_Verification.this, MainActivity3_admin.class);
+                        Intent intent = new Intent(admin_Verification.this, MainAdminActivity.class);
                         startActivity(intent);
                     }else {
                         Toast.makeText(getApplicationContext(), "Wrong!", Toast.LENGTH_LONG).show();

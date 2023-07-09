@@ -1,11 +1,4 @@
-package com.example.healthcarplus_app;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.healthcarplus_app.admin;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,8 +11,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+
 import com.bumptech.glide.Glide;
-import com.example.healthcarplus_app.admin.MainAdminActivity;
+import com.example.healthcarplus_app.R;
+import com.example.healthcarplus_app.product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,10 +31,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
-import java.text.DateFormat;
-import java.util.Calendar;
-import androidx.activity.result.ActivityResultLauncher;
 public class UpdateActivity extends AppCompatActivity {
 
     ImageView updateImage;
@@ -95,36 +93,13 @@ public class UpdateActivity extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveData();
-                Intent intent = new Intent(UpdateActivity.this, MainAdminActivity.class);
+                updateData();
+                Intent intent = new Intent(UpdateActivity.this, SearchAdminActivity.class);
                 startActivity(intent);
             }
         });
     }
-    public void saveData(){
-        storageReference = FirebaseStorage.getInstance().getReference().child("Android Images").child(uri.getLastPathSegment());
-        AlertDialog.Builder builder = new AlertDialog.Builder(UpdateActivity.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_layout);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
-                Uri urlImage = uriTask.getResult();
-                imageUrl = urlImage.toString();
-                updateData();
-                dialog.dismiss();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                dialog.dismiss();
-            }
-        });
-    }
+
     public void updateData(){
         name = updateName.getText().toString().trim();
         desc = updateDesc.getText().toString().trim();

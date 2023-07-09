@@ -13,7 +13,7 @@
         android:theme="@style/Theme.HealthCarPlus_App"
         tools:targetApi="31">
         <activity
-            android:name=".UpdateActivity"
+            android:name=".admin.UpdateActivity"
             android:exported="false" />
         <activity
             android:name=".DitailAdminActivity"
@@ -26,7 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".admin.SearchAdminActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".admin.admin_Verification"
             android:exported="false" />
@@ -44,7 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".admin.AddProductActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity2"
             android:exported="false" />

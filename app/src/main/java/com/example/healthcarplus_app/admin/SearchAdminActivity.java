@@ -53,12 +53,12 @@ public class SearchAdminActivity extends AppCompatActivity {
                     return true;
             } else if (item.getItemId() == R.id.add_button) {
                 startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+              //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             } else if (item.getItemId() == R.id.cost_button) {
                 startActivity(new Intent(getApplicationContext(), MoneySafeActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+              //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             }

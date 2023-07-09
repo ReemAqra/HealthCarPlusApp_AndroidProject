@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 //import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.healthcarplus_app.admin.SearchAdminActivity;
+import com.example.healthcarplus_app.admin.UpdateActivity;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -61,7 +63,7 @@ public class DitailAdminActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         reference.child(key).removeValue();
                         Toast.makeText(DitailAdminActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), SearchAdminActivity.class));
                         finish();
                     }
                 });

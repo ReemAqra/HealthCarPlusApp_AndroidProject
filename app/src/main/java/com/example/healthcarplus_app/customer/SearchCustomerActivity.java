@@ -47,17 +47,12 @@ public class SearchCustomerActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.search_btn);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home_btn) {
-                startActivity(new Intent(getApplicationContext(), MainCustomerActivity.class));
-                //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.search_btn) {
+            if (item.getItemId() == R.id.search_btn) {
                 return true;
             } else if (item.getItemId() == R.id.star_btn) {
 //                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
                 //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
+                //finish();
                 return true;
             } else if (item.getItemId() == R.id.call_btn) {
                 startActivity(new Intent(getApplicationContext(), CallUsActivity.class));
@@ -89,7 +84,7 @@ public class SearchCustomerActivity extends AppCompatActivity {
                 ProductList.clear();
                 for (DataSnapshot itemSnapshot: snapshot.getChildren()){
                     product Product = itemSnapshot.getValue(product.class);
-                    Product.setpName(itemSnapshot.getKey());
+                    //Product.setpName(itemSnapshot.getKey());
                     ProductList.add(Product);
                 }
                 adapter.notifyDataSetChanged();

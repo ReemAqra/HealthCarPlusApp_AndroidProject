@@ -18,25 +18,38 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthcarplus_app.MainActivity;
+import com.example.healthcarplus_app.MainActivity2;
 import com.example.healthcarplus_app.R;
 import com.example.healthcarplus_app.product;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
 public class AddProductActivity extends AppCompatActivity {
-     ImageView Image;
-     EditText nameEditText , priceEditText ,desEditText,numEditText;
+    ImageView Image;
+    EditText nameEditText ;
+    EditText priceEditText;
+    EditText desEditText;
+    EditText numEditText;
 
-    String ProductImage,ProductName,ProductPrice,ProductDescription,ProductNum,imageURL;
+    String ProductImage;
+    String ProductName;
+    String ProductPrice;
+    String ProductDescription;
+    String ProductNum;
+    String imageURL;
     Uri uri;
 
     @Override
@@ -49,15 +62,17 @@ public class AddProductActivity extends AppCompatActivity {
         priceEditText = (EditText) findViewById(R.id.pricetxt);
         desEditText = (EditText) findViewById(R.id.destxt);
         numEditText =  (EditText) findViewById(R.id.numtxt);
+
         ProductName= nameEditText.getText().toString();
-       ProductPrice= priceEditText.getText().toString();
+        ProductPrice= priceEditText.getText().toString();
         ProductDescription= desEditText.getText().toString();
-       ProductNum= numEditText.getText().toString();
+        ProductNum= numEditText.getText().toString();
 
         checkInstance(savedInstanceState);
+
+
+
         Button PostButton = (Button) findViewById(R.id.button);
-        String imageURL;
-        final Uri[][] uri = {new Uri[1]};
 
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
@@ -67,8 +82,8 @@ public class AddProductActivity extends AppCompatActivity {
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
-//                            uri = data.getData();
-//                            Image.setImageURI(uri);
+                            uri = data.getData();
+                            Image.setImageURI(uri);
                         } else {
                             Toast.makeText(AddProductActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
                         }
@@ -105,7 +120,7 @@ public class AddProductActivity extends AppCompatActivity {
                 }
                 saveData();
 
-                Intent intent = new Intent(AddProductActivity.this, MainAdminActivity.class);
+                Intent intent = new Intent(AddProductActivity.this, SearchAdminActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -189,4 +204,4 @@ public class AddProductActivity extends AppCompatActivity {
 
     }
 
-   }
+}

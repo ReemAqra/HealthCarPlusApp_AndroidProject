@@ -35,12 +35,7 @@ public class MoneySafeActivity extends AppCompatActivity implements AdapterView.
         bottomNavigationView.setSelectedItemId(R.id.cost_button);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home_button) {
-                startActivity(new Intent(getApplicationContext(), MainAdminActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.Search_button) {
+            if (item.getItemId() == R.id.Search_button) {
                 startActivity(new Intent(getApplicationContext(), SearchAdminActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();

@@ -28,12 +28,7 @@ public class CallUsActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.call_btn);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home_btn) {
-                startActivity(new Intent(getApplicationContext(), MainCustomerActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.search_btn) {
+           if (item.getItemId() == R.id.search_btn) {
                 startActivity(new Intent(getApplicationContext(), SearchCustomerActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();

@@ -7,6 +7,13 @@ public class product {
     private String pPrice;
     private String pDescription;
     private String pNumber;
+    private String key;
+    public String getKey() {
+        return key;
+    }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getpImage() {
         return pImage;

@@ -69,7 +69,7 @@ public class admin_Verification extends AppCompatActivity {
                         }
                 }
                 if (password.equals("123admin")){
-                    Intent intent = new Intent(admin_Verification.this, MainAdminActivity.class);
+                    Intent intent = new Intent(admin_Verification.this, SearchAdminActivity.class);
                     startActivity(intent);
                 }else {
                     Toast.makeText(getApplicationContext(), "Wrong!", Toast.LENGTH_LONG).show();

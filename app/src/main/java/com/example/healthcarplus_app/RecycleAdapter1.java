@@ -17,29 +17,29 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleAdapter  extends RecyclerView.Adapter<viewHolder> {
+public class RecycleAdapter1  extends RecyclerView.Adapter<viewHolder1> {
 
     private Context context;
     private List<product> ProductList;
 
 
-    public RecycleAdapter(Context context, List<product> productList ) {
+    public RecycleAdapter1(Context context, List<product> productList ) {
         this.context = context;
         this.ProductList = productList;
     }
 
     @NonNull
     @Override
-    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder1 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView v = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item,
                 parent,
                 false);
 
-        return new viewHolder(v);
+        return new viewHolder1(v);
     }
 
     @Override
-    public void onBindViewHolder( viewHolder holder, int position) {
+    public void onBindViewHolder( viewHolder1 holder, int position) {
 
         Glide.with(context).load(ProductList.get(position).getpImage()).into(holder.productImage);
         holder.productName.setText(ProductList.get(position).getpName());
@@ -47,12 +47,14 @@ public class RecycleAdapter  extends RecyclerView.Adapter<viewHolder> {
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, DitailActivity.class);
+                Intent intent = new Intent(context, DitailAdminActivity.class);
                 intent.putExtra("pImage", ProductList.get(holder.getAdapterPosition()).getpImage());
                 intent.putExtra("pDescription", ProductList.get(holder.getAdapterPosition()).getpDescription());
                 intent.putExtra("pName", ProductList.get(holder.getAdapterPosition()).getpName());
                 intent.putExtra("pPrice",ProductList.get(holder.getAdapterPosition()).getpPrice());
                 intent.putExtra("pNumber", ProductList.get(holder.getAdapterPosition()).getpNumber());
+                intent.putExtra("Key",ProductList.get(holder.getAdapterPosition()).getKey());
+
                 context.startActivity(intent);
             }
         });
@@ -71,13 +73,13 @@ public class RecycleAdapter  extends RecyclerView.Adapter<viewHolder> {
 
 
 }
-class viewHolder extends RecyclerView.ViewHolder{
+class viewHolder1 extends RecyclerView.ViewHolder{
     CardView cardView;
     TextView productName;
     TextView productPrice;
     ImageView productImage;
 
-    public viewHolder(CardView itemView){
+    public viewHolder1(CardView itemView){
         super(itemView);
         productName = itemView.findViewById(R.id.productName);
         productPrice = itemView.findViewById(R.id.productPrice);

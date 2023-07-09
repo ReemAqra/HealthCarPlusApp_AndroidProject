@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.example.healthcarplus_app.admin.admin_Verification;
 import com.example.healthcarplus_app.customer.MainCustomerActivity;
+import com.example.healthcarplus_app.customer.SearchCustomerActivity;
 
 public class MainActivity2 extends AppCompatActivity {
     private Button Customer_button,Admin_button;
@@ -33,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         Customer_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainCustomerActivity.class);
+                Intent intent = new Intent(MainActivity2.this, SearchCustomerActivity.class);
                 startActivity(intent);
             }
         });

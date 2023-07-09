@@ -13,32 +13,7 @@ public class MainAdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_admin);
-        // ----------------------------- Navigation Section ------------------------------
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationId);
-        bottomNavigationView.setSelectedItemId(R.id.home_button);
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home_button) {
-                return true;
-            } else if (item.getItemId() == R.id.Search_button) {
-                startActivity(new Intent(getApplicationContext(), SearchAdminActivity.class));
-              //  overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.add_button) {
-                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            } else if (item.getItemId() == R.id.cost_button) {
-                startActivity(new Intent(getApplicationContext(), MoneySafeActivity.class));
-                //overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            }
-            return false;
-        });
-        // ----------------------------------------------------------------------------
 
 
     }
